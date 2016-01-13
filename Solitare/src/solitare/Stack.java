@@ -30,6 +30,17 @@ public class Stack {
 	}
 	
 	
+	public Card GetTopCard() {
+		if ( num_cards == 0 ) return null;
+		return stack[num_cards-1];
+	}
+	
+	
+	public void RemoveTopCard() {
+		num_cards--;
+	}
+	
+	
 	public void PrintStack() {
 		System.out.println("---Stack---");
 		for ( int i=0; i<num_cards; i++ ) {

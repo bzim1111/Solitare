@@ -69,10 +69,16 @@ public class Card {
 			card_value = 9;
 			break;
 		case ten:
-		case jack:
-		case queen:
-		case king:
 			card_value = 10;
+			break;
+		case jack:
+			card_value = 11;
+			break;
+		case queen:
+			card_value = 12;
+			break;
+		case king:
+			card_value = 13;
 			break;
 		}
 	}
