@@ -42,7 +42,7 @@ public class Card {
 		
 		switch ( fv ) {
 		case ace:
-			card_value = 11;
+			card_value = 1;
 			break;
 		case two:
 			card_value = 2;
