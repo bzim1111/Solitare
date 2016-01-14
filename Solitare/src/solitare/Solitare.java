@@ -30,8 +30,6 @@ public class Solitare {
 		move_made = process_stacks ( deck , stack );
 		while ( move_made ) move_made = process_stacks ( deck , stack );
 		
-		/* process kings within the stacks */
-		
 		/* move cards from the stacks up to the piles */
 		
 		/* process the draw pile card */
@@ -89,8 +87,18 @@ public class Solitare {
 			for ( int i=0; i<7; i++ ) {
 				if ( i == j ) continue;
 				c2 = s[i].GetTopCard();
-				if ( c2 == null ) continue;
-				if (( c1.card_color != c2.card_color ) && ( c1.card_value == (c2.card_value-1) )) {
+				if ( c2 == null ) {
+					if (( c1.card_value == 13 ) && ( s[i].num_cards == 0 )) {
+						System.out.println("Can move to stack "+i);
+						s[j].MoveRun(s[i]);
+						move_made = true;
+						break;
+					}
+					else
+						continue;
+				}
+				if ( (( c1.card_color != c2.card_color ) && ( c1.card_value == (c2.card_value-1) ))
+						|| (( c1.card_value == 13 ) && ( s[i].num_cards == 0 ))) {
 					System.out.println("Can move to stack "+i);
 					s[j].MoveRun(s[i]);
 					move_made = true;
